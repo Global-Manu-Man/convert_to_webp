@@ -38,16 +38,16 @@ convert_to_webp() {
 
   # Skip conversion if the WebP file already exists
   if [ -f "$output_file" ]; then
-    echo "⚠️  Skipping: '$output_file' already exists."
+    echo "kipping: '$output_file' already exists."
     return
   fi
 
   # Convert the file to WebP using cwebp
   cwebp -quiet -q 90 "$input_file" -o "$output_file"
   if [ $? -eq 0 ]; then
-    echo "✅ Converted: '$input_file' → '$output_file'"
+    echo "Converted: '$input_file' → '$output_file'"
   else
-    echo "❌ Failed to convert: '$input_file'"
+    echo "Failed to convert: '$input_file'"
   fi
 }
 
